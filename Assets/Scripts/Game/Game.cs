@@ -2,6 +2,8 @@
 {
     private readonly GameUpdate _gameUpdate;
     private PlayerInput _playerInput;
+    private EnemyCollection _enemyCollection;
+    private HeroPrefab _heroPrefab;
     
     public Game(GameUpdate gameUpdate, HeroSpawner heroSpawner)
     {
@@ -14,6 +16,7 @@
     {
         InitInput();
         InitHero(heroSpawner);
+        InitEnemyCollection();
     }
 
     private void InitInput()
@@ -24,19 +27,25 @@
 
     private void InitHero(HeroSpawner heroSpawner)
     {
-        HeroPrefab heroPrefab = heroSpawner.Spawn();
-        IHeroStates heroStates = new HeroStates();
+        _heroPrefab = heroSpawner.Spawn();
+        ICharacterStates heroStates = new HeroStates();
         InputHandler inputHandler = new InputHandler(_playerInput, heroStates);
         
-        Hero hero = new Hero(heroPrefab, heroStates, inputHandler, new Health());
+        Hero hero = new Hero(_heroPrefab, heroStates, inputHandler, new Health());
 
-        HeroBoundHandler heroBoundHandler = new HeroBoundHandler(inputHandler, heroPrefab.RB, heroStates);
-        DetectorFinishAnimation detectorFinishAnimation = new DetectorFinishAnimation(hero.HeroAnimator);
+        HeroBoundHandler heroBoundHandler = new HeroBoundHandler(inputHandler, _heroPrefab.RB, heroStates);
+        IDetectorFinishAnimation detectorFinishAnimation = new DetectorFinishAnimation(hero.CharacterAnimator);
         StateResetter stateResetter = new StateResetter(detectorFinishAnimation, heroStates);
         
         heroStates.SetInitialState();
         _gameUpdate.Register(detectorFinishAnimation);
         _gameUpdate.Register(hero);
         _gameUpdate.Register(heroBoundHandler);
+    }
+
+    private void InitEnemyCollection()
+    {
+        EnemyCollection enemyCollection = new EnemyCollection(_heroPrefab.transform);
+        enemyCollection.Init();
     }
 }

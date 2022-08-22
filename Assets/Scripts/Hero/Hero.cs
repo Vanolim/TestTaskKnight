@@ -2,35 +2,39 @@ using UnityEngine;
 
 public class Hero : IUpdateble
 {
-    private HeroPrefab _heroPrefab;
-    private readonly HeroMovement _heroMovement;
-    private readonly HeroAnimator _heroAnimator;
-    private HeroAnimatorHandler _heroAnimatorHandler;
-    private HeroAttack _heroAttack;
-    private HeroHealthHandler _heroHealthHandler;
-    private IHealth _heroHealth;
+    private readonly HeroPrefab _heroPrefab;
+    private readonly IHealth _heroHealth;
+    private HeroMovement _heroMovement;
+    private CharacterAnimator _characterAnimator;
+    private CharacterAnimatorHandler _characterAnimatorHandler;
+    private CharacterAttack _heroAttack;
+    private HealthHandler _heroHealthHandler;
 
-    public HeroAnimator HeroAnimator => _heroAnimator;
+    public CharacterAnimator CharacterAnimator => _characterAnimator;
 
-    public Hero(HeroPrefab heroPrefab, IHeroStates heroStates, ISetMoveDirection setMoveDirection, IHealth health)
+    public Hero(HeroPrefab heroPrefab, ICharacterStates heroStates, ISetDirection setDirection, IHealth health)
     {
         _heroPrefab = heroPrefab;
-
-        _heroMovement = new HeroMovement(_heroPrefab.transform, _heroPrefab.RB, heroStates,
-            _heroPrefab.SpriteRenderer, setMoveDirection);
-
-        _heroAnimator = new HeroAnimator(_heroPrefab.Animator);
-        _heroAnimatorHandler = new HeroAnimatorHandler(_heroAnimator, heroStates);
-        _heroAttack = new HeroAttack(heroStates, _heroPrefab.Center, _heroMovement, _heroPrefab.HeroLayer);
         _heroHealth = health;
 
-        _heroHealthHandler = new HeroHealthHandler(FindView(), _heroHealth, _heroPrefab);
+        Init(heroStates, setDirection);
     }
 
-    public void UpdateState(float dt)
+    private void Init(ICharacterStates heroStates, ISetDirection setDirection)
     {
-        _heroMovement.UpdateState(dt);
+        _heroMovement = new HeroMovement(_heroPrefab.transform, heroStates, _heroPrefab.SpriteRenderer, setDirection,
+            _heroPrefab.RB);
+        _heroMovement.Init(moveSpeed: 6, bounceForce: 8.5f, rollSpeed: 10, rollDistance: 0.5f);
+
+        _characterAnimator = new CharacterAnimator(_heroPrefab.Animator);
+        _characterAnimatorHandler = new CharacterAnimatorHandler(_characterAnimator, heroStates);
+        _heroAttack = new CharacterAttack(heroStates, _heroPrefab.Center, setDirection, _heroPrefab.HeroLayer);
+
+        _heroHealthHandler = new HealthHandler(FindView(), _heroHealth, _heroPrefab);
+        _heroHealthHandler.Init(initialHealth: 20);
     }
 
-    private HeroHealthView FindView() => Object.FindObjectOfType<HeroHealthView>();
+    public void UpdateState(float dt) => _heroMovement.UpdateState(dt);
+
+    private IHealthView FindView() => Object.FindObjectOfType<HealthView>();
 }

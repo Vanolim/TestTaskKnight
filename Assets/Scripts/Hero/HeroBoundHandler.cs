@@ -3,7 +3,7 @@
 public class HeroBoundHandler : IUpdateble
 {
     private readonly InputHandler _inputHandler;
-    private readonly IHeroStates _heroStates;
+    private readonly ICharacterStates _heroStates;
     private readonly Rigidbody2D _heroRB;
 
     private bool _isFallSet;
@@ -12,7 +12,7 @@ public class HeroBoundHandler : IUpdateble
 
     private const float FALL_RATE = -1f;
 
-    public HeroBoundHandler(InputHandler inputHandler, Rigidbody2D heroRB, IHeroStates heroStates)
+    public HeroBoundHandler(InputHandler inputHandler, Rigidbody2D heroRB, ICharacterStates heroStates)
     {
         _inputHandler = inputHandler;
         _heroStates = heroStates;
@@ -23,7 +23,7 @@ public class HeroBoundHandler : IUpdateble
 
     private void TryJump()
     {
-        if (_heroRB.velocity == Vector2.zero && _heroStates.CurrentState is States.Idle or States.Run)
+        if (_heroRB.velocity == Vector2.zero && _heroStates.CurrentCharacterState is States.Idle or States.Run)
         {
             _heroStates.Transit(States.Jump);
             SetJump();

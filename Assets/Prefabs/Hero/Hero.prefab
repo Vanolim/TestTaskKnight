@@ -173,6 +173,7 @@ MonoBehaviour:
   _rb: {fileID: 1021974984825055657}
   _animator: {fileID: 1021974984825055663}
   _center: {fileID: 5978927465379536460}
+  _heroLayer: 3
 --- !u!1 &1021974984941550924
 GameObject:
   m_ObjectHideFlags: 0

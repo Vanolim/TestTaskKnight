@@ -1,33 +1,20 @@
-﻿using System;
-
-public class HeroStates : IHeroStates
+﻿public class HeroStates : CharacterStates
 {
-    public event Action<States> OnStateChanged;
-    public States CurrentState { get; private set; }
-
-    public void SetInitialState() => SetState(States.Idle);
-
-    public void Transit(States transitState)
+    public override void Transit(States transitCharacterState)
     {
-        if (CheckPossibleTransition(transitState))
-            SetState(transitState);
+        if (CheckPossibleTransition(transitCharacterState))
+            SetState(transitCharacterState);
     }
-
-    private void SetState(States state)
+    
+    private bool CheckPossibleTransition(States transitCharacterState)
     {
-        CurrentState = state;
-        OnStateChanged?.Invoke(CurrentState);
-    }
-
-    private bool CheckPossibleTransition(States transitState)
-    {
-        if (CurrentState == States.Jump)
+        if (CurrentCharacterState == States.Jump)
         {
-            if (transitState == States.Fall)
+            if (transitCharacterState == States.Fall)
                 return true;
         }
 
-        if (CurrentState is States.Idle or States.Run)
+        if (CurrentCharacterState is States.Idle or States.Run)
         {
             return true;
         }

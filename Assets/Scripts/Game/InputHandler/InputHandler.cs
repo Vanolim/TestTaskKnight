@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-public class InputHandler : ISetMoveDirection
+public class InputHandler : ISetDirection
 {
-    private readonly IHeroStates _heroStates;
+    private readonly ICharacterStates _heroStates;
     private readonly PlayerInput _playerInput;
 
     public Vector2 MoveDirection => _playerInput.Hero.Move.ReadValue<Vector2>();
 
     public event Action OnInputJump;
 
-    public InputHandler(PlayerInput playerInput, IHeroStates heroStates)
+    public InputHandler(PlayerInput playerInput, ICharacterStates heroStates)
     {
         _playerInput = playerInput;
         _heroStates = heroStates;
