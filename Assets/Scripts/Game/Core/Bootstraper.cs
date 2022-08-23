@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bootstraper : MonoBehaviour
 {
@@ -11,5 +10,6 @@ public class Bootstraper : MonoBehaviour
     private void Start()
     {
         _game = new Game(_gameUpdate, _heroSpawner);
+        _game.Start();
     }
 }

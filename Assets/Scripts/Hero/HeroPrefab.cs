@@ -8,6 +8,7 @@ public class HeroPrefab : MonoBehaviour, IDamageble
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _center;
     [SerializeField] private int _heroLayer;
+    [SerializeField] private CharacterEventAttackDetector _characterEventAttackDetector;
 
     public event Action<float> OnDamage;
 
@@ -16,6 +17,7 @@ public class HeroPrefab : MonoBehaviour, IDamageble
     public Animator Animator => _animator;
     public Transform Center => _center;
     public int HeroLayer => _heroLayer;
+    public CharacterEventAttackDetector CharacterEventAttackDetector => _characterEventAttackDetector;
 
     public void GetDamage(float value)
     {

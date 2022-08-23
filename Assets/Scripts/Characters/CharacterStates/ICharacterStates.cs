@@ -6,4 +6,5 @@ public interface ICharacterStates
     public States CurrentCharacterState { get; }
     public void SetInitialState();
     public void Transit(States transitCharacterState);
+    public void InitInitialState(States states);
 }

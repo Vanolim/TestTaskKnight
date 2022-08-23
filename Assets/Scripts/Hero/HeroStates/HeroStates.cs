@@ -14,11 +14,12 @@
                 return true;
         }
 
-        if (CurrentCharacterState is States.Idle or States.Run)
+        if (CurrentCharacterState is States.Idle or States.Run or States.GetDamage)
         {
             return true;
         }
         
+
         return false;
     }
 }

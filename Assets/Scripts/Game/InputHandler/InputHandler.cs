@@ -6,7 +6,9 @@ public class InputHandler : ISetDirection
     private readonly ICharacterStates _heroStates;
     private readonly PlayerInput _playerInput;
 
-    public Vector2 MoveDirection => _playerInput.Hero.Move.ReadValue<Vector2>();
+    private Vector2 _direction;
+
+    public Vector2 Direction => _direction;
 
     public event Action OnInputJump;
 
@@ -29,6 +31,7 @@ public class InputHandler : ISetDirection
 
     private void OnMove()
     {
+        _direction = _playerInput.Hero.Move.ReadValue<Vector2>();
         _heroStates.Transit(States.Run);
     }
 

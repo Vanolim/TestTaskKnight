@@ -1,115 +1,7 @@
 fileFormatVersion: 2
-guid: 317b8365a4649ab459f6cb58ec8f9f18
+guid: 56bf960da830b5a4ebef2e485519c2e6
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: HeavyBandit_0
-  - first:
-      213: 21300002
-    second: HeavyBandit_1
-  - first:
-      213: 21300004
-    second: HeavyBandit_2
-  - first:
-      213: 21300006
-    second: HeavyBandit_3
-  - first:
-      213: 21300008
-    second: HeavyBandit_4
-  - first:
-      213: 21300010
-    second: HeavyBandit_5
-  - first:
-      213: 21300012
-    second: HeavyBandit_6
-  - first:
-      213: 21300014
-    second: HeavyBandit_7
-  - first:
-      213: 21300016
-    second: HeavyBandit_8
-  - first:
-      213: 21300018
-    second: HeavyBandit_9
-  - first:
-      213: 21300020
-    second: HeavyBandit_10
-  - first:
-      213: 21300022
-    second: HeavyBandit_11
-  - first:
-      213: 21300024
-    second: HeavyBandit_12
-  - first:
-      213: 21300026
-    second: HeavyBandit_13
-  - first:
-      213: 21300028
-    second: HeavyBandit_14
-  - first:
-      213: 21300030
-    second: HeavyBandit_15
-  - first:
-      213: 21300032
-    second: HeavyBandit_16
-  - first:
-      213: 21300034
-    second: HeavyBandit_17
-  - first:
-      213: 21300036
-    second: HeavyBandit_18
-  - first:
-      213: 21300038
-    second: HeavyBandit_19
-  - first:
-      213: 21300040
-    second: HeavyBandit_20
-  - first:
-      213: 21300042
-    second: HeavyBandit_21
-  - first:
-      213: 21300044
-    second: HeavyBandit_22
-  - first:
-      213: 21300046
-    second: HeavyBandit_23
-  - first:
-      213: 21300048
-    second: HeavyBandit_24
-  - first:
-      213: 21300050
-    second: HeavyBandit_25
-  - first:
-      213: 21300052
-    second: HeavyBandit_26
-  - first:
-      213: 21300054
-    second: HeavyBandit_27
-  - first:
-      213: 21300056
-    second: HeavyBandit_28
-  - first:
-      213: 21300058
-    second: HeavyBandit_29
-  - first:
-      213: 21300060
-    second: HeavyBandit_30
-  - first:
-      213: 21300062
-    second: HeavyBandit_31
-  - first:
-      213: 21300064
-    second: HeavyBandit_32
-  - first:
-      213: 21300066
-    second: HeavyBandit_33
-  - first:
-      213: 21300068
-    second: HeavyBandit_34
-  - first:
-      213: 21300070
-    second: HeavyBandit_35
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,7 +63,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
@@ -179,7 +71,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -191,31 +83,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -227,7 +95,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -238,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HeavyBandit_0
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 208
-        width: 48
-        height: 48
+        x: 137
+        y: 210
+        width: 33
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bee6eab3ad70a3845ad4efc420d4c5d1
-      internalID: 21300000
+      spriteID: 1263f78ec6e52d64691ae17b8bad0ee8
+      internalID: 2074567079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_1
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 208
-        width: 48
-        height: 48
+        x: 185
+        y: 210
+        width: 33
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a0a06bba7f99a448abc93cabc082a2c
-      internalID: 21300002
+      spriteID: 90454482cd348b04b8239f6b3d2c5c86
+      internalID: 1146933077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_2
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 208
-        width: 48
-        height: 48
+        x: 234
+        y: 210
+        width: 33
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04e04917a66ccff42acee0e47553d9e9
-      internalID: 21300004
+      spriteID: 2ce5fdd84b475644bb5927af16f18917
+      internalID: -1741565528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_3
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 208
-        width: 48
-        height: 48
+        x: 281
+        y: 210
+        width: 33
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec641d1d7004d7449a52823790f698ae
-      internalID: 21300006
+      spriteID: 9a7608447fab41948af66b5fd946efcc
+      internalID: -1868403913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_4
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 208
-        width: 48
-        height: 48
+        x: 328
+        y: 210
+        width: 26
+        height: 37
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe927c35f5f419c41ae4869f951624fb
-      internalID: 21300008
+      spriteID: 9077a610588238b48befd7f4d0e32eeb
+      internalID: -777343643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_5
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_5
       rect:
         serializedVersion: 2
-        x: 240
-        y: 208
-        width: 48
-        height: 48
+        x: 376
+        y: 210
+        width: 26
+        height: 37
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38d9673bfef61854489fa79780a7ab8c
-      internalID: 21300010
+      spriteID: d6fac84563c6c8d41860b65b1cef2878
+      internalID: 758552139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_6
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_6
       rect:
         serializedVersion: 2
-        x: 288
-        y: 208
-        width: 48
-        height: 48
+        x: 424
+        y: 210
+        width: 26
+        height: 38
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c469488d41fc20544a7431516b8f43f3
-      internalID: 21300012
+      spriteID: 29fcb0b5b2c9f8740be129744d12240f
+      internalID: -1335931635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_7
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_7
       rect:
         serializedVersion: 2
-        x: 336
-        y: 208
-        width: 48
-        height: 48
+        x: 472
+        y: 210
+        width: 26
+        height: 38
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eff14b2615f429142904d4155745b32d
-      internalID: 21300014
+      spriteID: 2713ebacec08a684c8438c639c4e7867
+      internalID: 439400593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_8
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
-        width: 48
-        height: 48
+        x: 138
+        y: 162
+        width: 31
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,20 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c90ec4bfd16bfb4db3c33e4c4976f91
-      internalID: 21300016
+      spriteID: 2053c755cb03070489add09c5a34d781
+      internalID: 758735835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_9
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 160
-        width: 48
-        height: 48
+        x: 187
+        y: 162
+        width: 31
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa41a842201458849a1fb9123ee566f8
-      internalID: 21300018
+      spriteID: 673fa29250dfb034e90690b3596c6c46
+      internalID: -1832645576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_10
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 160
-        width: 48
-        height: 48
+        x: 234
+        y: 164
+        width: 31
+        height: 33
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,20 +354,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b998543f6e42d41a5b4f51dd99bd07
-      internalID: 21300020
+      spriteID: 7b0a07155d287254780ef53b5a24410f
+      internalID: 1089378856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_11
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_11
       rect:
         serializedVersion: 2
-        x: 144
-        y: 160
-        width: 48
-        height: 48
+        x: 283
+        y: 163
+        width: 21
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,20 +375,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8d173e3c0508624b9d8119e36ce11de
-      internalID: 21300022
+      spriteID: 87b097ba5e0fc324ca2d9b3a2a00d155
+      internalID: -490721709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_12
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_12
       rect:
         serializedVersion: 2
-        x: 192
-        y: 160
-        width: 48
-        height: 48
+        x: 329
+        y: 161
+        width: 25
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,20 +396,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23809b2981984a449a06d8d52a104680
-      internalID: 21300024
+      spriteID: 31049555a95542b4d954d24c1bd1d427
+      internalID: 1335596213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_13
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_13
       rect:
         serializedVersion: 2
-        x: 240
-        y: 160
-        width: 48
-        height: 48
+        x: 376
+        y: 162
+        width: 31
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,20 +417,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab6dc2f7ed3d46e4eaa534bf95d4bd32
-      internalID: 21300026
+      spriteID: e7783ac372ce9724fa2a8f5c0057ac06
+      internalID: -1103345926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_14
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_14
       rect:
         serializedVersion: 2
-        x: 288
-        y: 160
-        width: 48
-        height: 48
+        x: 425
+        y: 163
+        width: 29
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,20 +438,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49345b77369f91f40b329ddca2a59c77
-      internalID: 21300028
+      spriteID: 573f447b3d6b492469253a51c417da58
+      internalID: -1015526160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_15
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_15
       rect:
         serializedVersion: 2
-        x: 336
-        y: 160
-        width: 48
-        height: 48
+        x: 473
+        y: 162
+        width: 25
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,20 +459,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b7a70576ec8dab42aa9f316ca06508f
-      internalID: 21300030
+      spriteID: ac60ee394a197464bb6f4e0585b08070
+      internalID: 1018040265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_16
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 112
-        width: 48
-        height: 48
+        x: 138
+        y: 114
+        width: 24
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,20 +480,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe6d6f7adfa2f24293b6029bb5746d7
-      internalID: 21300032
+      spriteID: a338647588bdd494ca4e4e2b7daf010e
+      internalID: -875022383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_17
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_17
       rect:
         serializedVersion: 2
-        x: 48
-        y: 112
-        width: 48
-        height: 48
+        x: 186
+        y: 114
+        width: 33
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,20 +501,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6351f586344697b4a82eda690a2b194f
-      internalID: 21300034
+      spriteID: 0a73708459f49404fa41933242ced54a
+      internalID: -2101370206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_18
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_18
       rect:
         serializedVersion: 2
-        x: 96
-        y: 112
-        width: 48
-        height: 48
+        x: 234
+        y: 114
+        width: 36
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,20 +522,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea597ef5a7235c64b8f374864344cae1
-      internalID: 21300036
+      spriteID: 40de32614ab480d42a5a5bfee5a8ac40
+      internalID: -1896481004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_19
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_19
       rect:
         serializedVersion: 2
-        x: 144
-        y: 112
-        width: 48
-        height: 48
+        x: 282
+        y: 114
+        width: 38
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,20 +543,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae83aaa8fa662a441bf9247f4d39cecf
-      internalID: 21300038
+      spriteID: d1c0db3553fdc86479ad126cb858912e
+      internalID: 899438148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_20
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_20
       rect:
         serializedVersion: 2
-        x: 192
-        y: 112
-        width: 48
-        height: 48
+        x: 333
+        y: 114
+        width: 24
+        height: 45
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,20 +564,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 801f6735e40419044b36f3466772d7a6
-      internalID: 21300040
+      spriteID: 3482e6e6b9dca8141b4b7566afafdf00
+      internalID: -1897560925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_21
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_21
       rect:
         serializedVersion: 2
-        x: 240
-        y: 112
-        width: 48
-        height: 48
+        x: 380
+        y: 114
+        width: 25
+        height: 45
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -693,20 +585,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b81785f4671b9474db9a45bc59f3ff17
-      internalID: 21300042
+      spriteID: 2e96a040f0e460e40be4b5dbe32e3f26
+      internalID: 746326387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_22
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_22
       rect:
         serializedVersion: 2
-        x: 288
-        y: 112
-        width: 48
-        height: 48
+        x: 428
+        y: 114
+        width: 25
+        height: 45
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -714,20 +606,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78554e2ce87d01a498a9e611a3bf081f
-      internalID: 21300044
+      spriteID: 82a6d358bb68e5241a71a7d327ca1649
+      internalID: -513410100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_23
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_23
       rect:
         serializedVersion: 2
-        x: 336
-        y: 112
-        width: 48
-        height: 48
+        x: 476
+        y: 114
+        width: 24
+        height: 46
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,20 +627,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a681ee2139f8c41ab4f182980194ef
-      internalID: 21300046
+      spriteID: cefcd7d2b9e078444ab9160d87d99297
+      internalID: -29643925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_24
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 48
-        height: 48
+        x: 139
+        y: 66
+        width: 23
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,20 +648,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c58f458fcd2d7424e933b3ea81c0b55b
-      internalID: 21300048
+      spriteID: 24aab247628c32548b561bf73186f633
+      internalID: -149359753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_25
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_25
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 48
-        height: 48
+        x: 186
+        y: 66
+        width: 26
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,20 +669,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a4b0223b4894e34fa15fcf7d02d5142
-      internalID: 21300050
+      spriteID: b33db5d1e832d104ab320c0c84d16825
+      internalID: -1113048429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_26
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_26
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 48
-        height: 48
+        x: 234
+        y: 66
+        width: 26
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -798,20 +690,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef01f7b9a4de3b4bae51d65c9e0ee26
-      internalID: 21300052
+      spriteID: b9a6886e7f27a9e4cbd081c98c664207
+      internalID: -727514260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_27
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_27
       rect:
         serializedVersion: 2
-        x: 144
-        y: 64
-        width: 48
-        height: 48
+        x: 282
+        y: 66
+        width: 26
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,20 +711,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7caaca760d503bb45a89f61315421485
-      internalID: 21300054
+      spriteID: bb548b291e1736144bda2eaf2e72a16a
+      internalID: -89206168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_28
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_28
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 48
-        height: 48
+        x: 330
+        y: 66
+        width: 26
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -840,20 +732,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac1f6cc0268db82419f30a293f17428b
-      internalID: 21300056
+      spriteID: 8c1f15d0697732440b6cc5176cafc1a2
+      internalID: 2122609880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_29
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_29
       rect:
         serializedVersion: 2
-        x: 240
-        y: 64
-        width: 48
-        height: 48
+        x: 378
+        y: 66
+        width: 27
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -861,20 +753,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14c59aeeaac0f104f8d62b0859f5997d
-      internalID: 21300058
+      spriteID: 3877bb39372d00645b60439d271eb9a4
+      internalID: -399309617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_30
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_30
       rect:
         serializedVersion: 2
-        x: 288
-        y: 64
-        width: 48
-        height: 48
+        x: 420
+        y: 66
+        width: 37
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,20 +774,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aafe91b9ee71e244ac69bc60dcd010a
-      internalID: 21300060
+      spriteID: 81b33eed8eceaad49b88c146f93147d4
+      internalID: 1463298570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_31
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_31
       rect:
         serializedVersion: 2
-        x: 336
-        y: 64
-        width: 48
-        height: 48
+        x: 467
+        y: 66
+        width: 40
+        height: 13
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,20 +795,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 112cb9b1ca09e1f4eabf3495798f4989
-      internalID: 21300062
+      spriteID: 0ad30c62fd7d9c043b01c030d68338eb
+      internalID: 1087121069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_32
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 48
-        height: 48
+        x: 323
+        y: 18
+        width: 44
+        height: 9
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -924,20 +816,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d1b74387f847614e9227ac7725d2581
-      internalID: 21300064
+      spriteID: 664a6a9ab42cbb441acbc920ecd8cb60
+      internalID: -1769046578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_33
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_33
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 48
-        height: 48
+        x: 378
+        y: 18
+        width: 24
+        height: 38
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -945,20 +837,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56b5c6e4acc349c4ebf0f7a38ea4eb66
-      internalID: 21300066
+      spriteID: acdb5f7f6acc1c148a3570c54023519a
+      internalID: 698168072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_34
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_34
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
-        width: 48
-        height: 48
+        x: 424
+        y: 19
+        width: 26
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -966,20 +858,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f62dbb7b90ffa245b76d39fe6144324
-      internalID: 21300068
+      spriteID: 1afb02e1244e83743a1fc0c8816509c7
+      internalID: 1588443416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeavyBandit_35
+      name: imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_35
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
-        width: 48
-        height: 48
+        x: 472
+        y: 18
+        width: 26
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -987,8 +879,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a13a56b2af8414e83b623768b678c3
-      internalID: 21300070
+      spriteID: b4afcb15116d52045a4a3367d74037ae
+      internalID: -1572323590
       vertices: []
       indices: 
       edges: []
@@ -996,7 +888,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 77f680605f2811742b74dfb46ff41961
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -1004,42 +896,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HeavyBandit_25: 21300050
-      HeavyBandit_22: 21300044
-      HeavyBandit_2: 21300004
-      HeavyBandit_16: 21300032
-      HeavyBandit_1: 21300002
-      HeavyBandit_12: 21300024
-      HeavyBandit_31: 21300062
-      HeavyBandit_23: 21300046
-      HeavyBandit_15: 21300030
-      HeavyBandit_20: 21300040
-      HeavyBandit_9: 21300018
-      HeavyBandit_4: 21300008
-      HeavyBandit_34: 21300068
-      HeavyBandit_26: 21300052
-      HeavyBandit_28: 21300056
-      HeavyBandit_13: 21300026
-      HeavyBandit_0: 21300000
-      HeavyBandit_33: 21300066
-      HeavyBandit_17: 21300034
-      HeavyBandit_6: 21300012
-      HeavyBandit_21: 21300042
-      HeavyBandit_18: 21300036
-      HeavyBandit_10: 21300020
-      HeavyBandit_24: 21300048
-      HeavyBandit_7: 21300014
-      HeavyBandit_35: 21300070
-      HeavyBandit_27: 21300054
-      HeavyBandit_11: 21300022
-      HeavyBandit_14: 21300028
-      HeavyBandit_32: 21300064
-      HeavyBandit_29: 21300058
-      HeavyBandit_5: 21300010
-      HeavyBandit_3: 21300006
-      HeavyBandit_30: 21300060
-      HeavyBandit_8: 21300016
-      HeavyBandit_19: 21300038
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_12: 1335596213
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_13: -1103345926
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_23: -29643925
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_10: 1089378856
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_2: -1741565528
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_20: -1897560925
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_24: -149359753
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_34: 1588443416
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_16: -875022383
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_0: 2074567079
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_5: 758552139
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_18: -1896481004
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_30: 1463298570
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_7: 439400593
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_1: 1146933077
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_27: -89206168
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_19: 899438148
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_32: -1769046578
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_9: -1832645576
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_28: 2122609880
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_25: -1113048429
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_3: -1868403913
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_35: -1572323590
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_22: -513410100
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_6: -1335931635
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_31: 1087121069
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_17: -2101370206
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_14: -1015526160
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_21: 746326387
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_26: -727514260
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_8: 758735835
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_11: -490721709
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_29: -399309617
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_15: 1018040265
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_33: 698168072
+      imgonline-com-ua-Mirror-p2Yxk4c6R35P9Vem_4: -777343643
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

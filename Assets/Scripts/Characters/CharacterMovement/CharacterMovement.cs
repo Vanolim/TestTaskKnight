@@ -10,7 +10,7 @@ public abstract class CharacterMovement : IUpdateble
     private float _moveSpeed;
     
     protected States CurrentCharacterStates;
-    protected Vector2 Direction => _setDirection.MoveDirection;
+    protected Vector2 Direction => _setDirection.Direction.normalized;
     protected Transform Character => _character;
 
     public CharacterMovement(Transform character, ICharacterStates characterStates, 

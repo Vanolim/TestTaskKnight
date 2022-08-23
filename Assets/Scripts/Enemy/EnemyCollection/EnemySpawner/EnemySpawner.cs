@@ -12,4 +12,13 @@ public class EnemySpawner : MonoBehaviour
         EnemyPrefab enemy = Instantiate(_enemyPrefab, _initialPosition);
         return enemy;
     }
+
+    public Vector2 GetSpawnPosition()
+    {
+        int countSpawnPosition = 2;
+        if (Random.Range(0, countSpawnPosition) == 0)
+            return _leftSpawnPosition.position;
+        
+        return _rightSpawnPosition.position;
+    }
 }

@@ -35,7 +35,7 @@ public class CharacterAnimator : ICharacterAnimator
 
     public void SetGetDamage() => _animator.SetTrigger(GetDamage);
 
-    public void SetDie() => _animator.SetTrigger(Die);
+    public void SetDie(bool value) => _animator.SetBool(Die, value);
 
     public void SetRoll() => _animator.SetTrigger(Roll);
 

@@ -1,6 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-public class DetectorFinishAnimation : IUpdateble, IDetectorFinishAnimation
+public class DetectorFinishAnimation : IDetectorFinishAnimation
 {
     private readonly ICharacterAnimator _characterAnimator;
     public event Action OnFinish;
@@ -12,7 +13,9 @@ public class DetectorFinishAnimation : IUpdateble, IDetectorFinishAnimation
 
     public void UpdateState(float dt)
     {
-        if (_characterAnimator.IsAnimationFinish()) 
+        if (_characterAnimator.IsAnimationFinish())
+        {
             OnFinish?.Invoke();
+        }
     }
 }

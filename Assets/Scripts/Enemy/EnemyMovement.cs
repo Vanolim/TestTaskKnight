@@ -12,11 +12,8 @@ public class EnemyMovement : CharacterMovement
 
     public override void UpdateState(float dt)
     {
-        if (CurrentCharacterStates == States.Run)
-        {
-            Debug.Log(Direction);
+        if (CurrentCharacterStates == States.Run) 
             Move(dt);
-        }
     }
 
     protected override void SetCurrentState(States currentCharacterState) => CurrentCharacterStates = currentCharacterState;

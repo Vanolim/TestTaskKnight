@@ -1,9 +1,12 @@
-﻿public class Game
+﻿using UnityEngine;
+
+public class Game
 {
     private readonly GameUpdate _gameUpdate;
     private PlayerInput _playerInput;
     private EnemyCollection _enemyCollection;
-    private HeroPrefab _heroPrefab;
+    private Hero _hero;
+    private Player _player;
     
     public Game(GameUpdate gameUpdate, HeroSpawner heroSpawner)
     {
@@ -12,11 +15,17 @@
         Init(heroSpawner);
     }
 
+    public void Start()
+    {
+        _enemyCollection.Start();
+    }
+
     private void Init(HeroSpawner heroSpawner)
     {
         InitInput();
         InitHero(heroSpawner);
         InitEnemyCollection();
+        InitPlayer();
     }
 
     private void InitInput()
@@ -27,25 +36,23 @@
 
     private void InitHero(HeroSpawner heroSpawner)
     {
-        _heroPrefab = heroSpawner.Spawn();
-        ICharacterStates heroStates = new HeroStates();
-        InputHandler inputHandler = new InputHandler(_playerInput, heroStates);
-        
-        Hero hero = new Hero(_heroPrefab, heroStates, inputHandler, new Health());
+        HeroPrefab heroPrefab = heroSpawner.Spawn();
 
-        HeroBoundHandler heroBoundHandler = new HeroBoundHandler(inputHandler, _heroPrefab.RB, heroStates);
-        IDetectorFinishAnimation detectorFinishAnimation = new DetectorFinishAnimation(hero.CharacterAnimator);
-        StateResetter stateResetter = new StateResetter(detectorFinishAnimation, heroStates);
+        _hero = new Hero(heroPrefab, new Health(), _playerInput);
         
-        heroStates.SetInitialState();
-        _gameUpdate.Register(detectorFinishAnimation);
-        _gameUpdate.Register(hero);
-        _gameUpdate.Register(heroBoundHandler);
+        _gameUpdate.Register(_hero);
     }
 
     private void InitEnemyCollection()
     {
-        EnemyCollection enemyCollection = new EnemyCollection(_heroPrefab.transform);
-        enemyCollection.Init();
+        _enemyCollection = new EnemyCollection(_hero.Transform);
+        _gameUpdate.Register(_enemyCollection);
     }
+
+    private void InitPlayer()
+    {
+        _player = new Player(_hero, _enemyCollection, FindCoreView());
+    }
+
+    private CoreView FindCoreView() => Object.FindObjectOfType<CoreView>();
 }

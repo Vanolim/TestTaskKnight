@@ -1,4 +1,6 @@
-﻿public class StateResetter
+﻿using UnityEngine;
+
+public class StateResetter
 {
     private readonly IDetectorFinishAnimation _detectorFinishAnimation;
     private readonly ICharacterStates _characterStates;

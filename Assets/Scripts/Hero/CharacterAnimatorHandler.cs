@@ -12,6 +12,8 @@ public class CharacterAnimatorHandler
 
         _characterStates.OnStateChanged += SetAnimation;
     }
+    
+    public void Reset() =>  _characterAnimator.SetDie(false);
 
     private void SetAnimation(States currentCharacterState)
     {
@@ -33,13 +35,14 @@ public class CharacterAnimatorHandler
                 _characterAnimator.SetRoll();
                 break;
             case States.Attack:
-                SetRandomAnimationAttack();
+                //SetRandomAnimationAttack();
+                _characterAnimator.SetAttack1();
                 break;
             case States.GetDamage:
                 _characterAnimator.SetGetDamage();
                 break;
             case States.Die:
-                _characterAnimator.SetDie();
+                _characterAnimator.SetDie(true);
                 break;
         }
     }

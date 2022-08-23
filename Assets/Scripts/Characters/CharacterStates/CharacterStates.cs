@@ -1,11 +1,14 @@
 ﻿using System;
+using UnityEngine;
 
 public abstract class CharacterStates : ICharacterStates
 {
+    private States _initialStates = States.Idle;
+    
     public event Action<States> OnStateChanged;
     public States CurrentCharacterState { get; private set; }
 
-    public void SetInitialState() => SetState(States.Idle);
+    public void SetInitialState() => SetState(_initialStates);
 
     public abstract void Transit(States transitCharacterState);
 
@@ -15,19 +18,5 @@ public abstract class CharacterStates : ICharacterStates
         OnStateChanged?.Invoke(CurrentCharacterState);
     }
 
-    private bool CheckPossibleTransition(States transitCharacterState)
-    {
-        if (CurrentCharacterState == States.Jump)
-        {
-            if (transitCharacterState == States.Fall)
-                return true;
-        }
-
-        if (CurrentCharacterState is States.Idle or States.Run)
-        {
-            return true;
-        }
-        
-        return false;
-    }
+    public void InitInitialState(States states) => _initialStates = states;
 }

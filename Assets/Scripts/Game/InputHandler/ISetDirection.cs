@@ -2,5 +2,5 @@
 
 public interface ISetDirection
 {
-    public Vector2 MoveDirection { get; }
+    public Vector2 Direction { get; }
 }
