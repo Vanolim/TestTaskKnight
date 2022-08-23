@@ -1,4 +1,6 @@
-﻿public class EnemyAttackDetector : IUpdateble
+﻿using UnityEngine;
+
+public class EnemyAttackDetector : IUpdateble
 {
     private readonly ICharacterStates _characterStates;
     private readonly ISetDirection _setDirection;
@@ -18,15 +20,5 @@
             _characterStates.Transit(States.Attack);
     }
 
-    private bool IsTargetInAttackDistance()
-    {
-        if (_setDirection.Direction.x >= 0)
-        {
-            return _setDirection.Direction.x <= _distanceAttack;
-        }
-        else
-        {
-            return _setDirection.Direction.x >= _distanceAttack;
-        }
-    }
+    private bool IsTargetInAttackDistance() => Mathf.Abs(_setDirection.Direction.x) <= _distanceAttack;
 }

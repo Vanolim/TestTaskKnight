@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 public class DetectorFinishAnimation : IDetectorFinishAnimation
 {
@@ -13,9 +12,7 @@ public class DetectorFinishAnimation : IDetectorFinishAnimation
 
     public void UpdateState(float dt)
     {
-        if (_characterAnimator.IsAnimationFinish())
-        {
+        if (_characterAnimator.IsAnimationFinish()) 
             OnFinish?.Invoke();
-        }
     }
 }

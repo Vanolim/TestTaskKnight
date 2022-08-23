@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class HeroStatesHandler : IUpdateble
+public class HeroStatesHandler : IUpdateble, IDisposable
 {
     private readonly IDetectorFinishAnimation _detectorFinishAnimation;
-    private StateResetter _stateResetter;
-    private HeroBoundHandler _heroBoundHandler;
+    private readonly StateResetter _stateResetter;
+    private readonly HeroBoundHandler _heroBoundHandler;
     public ICharacterStates HeroStates { get; }
     public InputHandler InputHandler { get; }
 
@@ -15,12 +15,16 @@ public class HeroStatesHandler : IUpdateble
         _detectorFinishAnimation = new DetectorFinishAnimation(characterAnimator);
         _stateResetter = new StateResetter(_detectorFinishAnimation, HeroStates);
         _heroBoundHandler = new HeroBoundHandler(InputHandler, rb, HeroStates);
-        
-        HeroStates.SetInitialState();
     }
 
     public void UpdateState(float dt)
     {
         _detectorFinishAnimation.UpdateState(dt);
+        _heroBoundHandler.UpdateState(dt);
+    }
+
+    public void Dispose()
+    {
+        _stateResetter.Dispose();
     }
 }

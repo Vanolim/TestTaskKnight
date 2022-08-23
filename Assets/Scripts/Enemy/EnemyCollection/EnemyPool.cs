@@ -3,12 +3,13 @@ using System.Linq;
 
 public class EnemyPool
 {
-    private List<Enemy> _enemies = new List<Enemy>();
+    private readonly List<Enemy> _enemies = new List<Enemy>();
 
-    public void AddEnemy(Enemy enemy)
+    public void AddEnemy(Enemy enemy) => _enemies.Add(enemy);
+
+    public bool TryGetEnemy(out Enemy enemy)
     {
-        _enemies.Add(enemy);
+        enemy = _enemies.FirstOrDefault(x => x.IsActive == false);
+        return enemy != null;
     }
-
-    public Enemy GetEnemy() => _enemies.First(x => x.IsActive == false);
 }

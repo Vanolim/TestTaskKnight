@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class StateResetter
+﻿public class StateResetter : IDisposable
 {
     private readonly IDetectorFinishAnimation _detectorFinishAnimation;
     private readonly ICharacterStates _characterStates;
@@ -14,4 +12,5 @@ public class StateResetter
     }
 
     private void ResetState() => _characterStates.SetInitialState();
+    public void Dispose() => _detectorFinishAnimation.OnFinish -= ResetState;
 }

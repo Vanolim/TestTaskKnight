@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameUpdate : MonoBehaviour
 {
-    private List<IUpdateble> _updatebles = new List<IUpdateble>();
+    private readonly List<IUpdateble> _updatebles = new List<IUpdateble>();
 
     private void Update()
     {
@@ -14,8 +13,5 @@ public class GameUpdate : MonoBehaviour
         }
     }
 
-    public void Register(IUpdateble updateble)
-    {
-        _updatebles.Add(updateble);
-    }
+    public void Register(IUpdateble updateble) => _updatebles.Add(updateble);
 }

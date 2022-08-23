@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 public class EnemyCollection : IUpdateble
 {
     private readonly Transform _hero;
-    private EnemySpawner _enemySpawner;
+    private readonly EnemySpawner _enemySpawner;
     private readonly EnemyPool _enemyPool;
     private readonly EnemiesDamageEnhancer _enemiesDamageEnhancer;
-    private int _countPoolEnemy = 10;
+    private int _countPoolEnemy = 2;
 
     private int _spawnTime = 2;
     private bool _isWork;
@@ -19,19 +18,18 @@ public class EnemyCollection : IUpdateble
 
     public event Action OnEnemyKilled;
 
-    public EnemyCollection(Transform hero)
+    public EnemyCollection(Transform hero, EnemySpawner enemySpawner)
     {
         _hero = hero;
         _enemyPool = new EnemyPool();
         _enemiesDamageEnhancer = new EnemiesDamageEnhancer();
+        _enemySpawner = enemySpawner;
 
         Init();
     }
 
     private void Init()
     {
-        FindEnemySpawner();
-        
         for (int i = 0; i < _countPoolEnemy; i++)
         {
             EnemyPrefab newEnemy = _enemySpawner.Spawn();
@@ -70,10 +68,12 @@ public class EnemyCollection : IUpdateble
 
     private void GetNewActiveEnemy()
     {
-        Enemy activeEnemy = _enemyPool.GetEnemy();
-        activeEnemy.SetPosition(_enemySpawner.GetSpawnPosition());
-        activeEnemy.Activate();
-        _activeEnemies.Add(activeEnemy);
+        if (_enemyPool.TryGetEnemy(out Enemy enemy))
+        {
+            enemy.SetPosition(_enemySpawner.GetSpawnPosition());
+            enemy.Activate();
+            _activeEnemies.Add(enemy);
+        }
     }
 
     private void DeactivateActiveEnemy(Enemy enemy)
@@ -83,5 +83,13 @@ public class EnemyCollection : IUpdateble
         enemy.Deactivate();
     }
 
-    private void FindEnemySpawner() => _enemySpawner = Object.FindObjectOfType<EnemySpawner>();
+    public void Deactivate()
+    {
+        _isWork = false;
+
+        foreach (var activeEnemy in _activeEnemies)
+        {
+            activeEnemy.Deactivate();
+        }
+    }
 }

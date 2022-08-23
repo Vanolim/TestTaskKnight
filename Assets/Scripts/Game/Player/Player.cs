@@ -1,11 +1,11 @@
 ﻿public class Player
 {
-    private PlayerLose _playerLose;
-    private Core _core;
+    public PlayerLose PlayerLose { get; }
+    public Core Core { get; }
 
-    public Player(Hero hero, EnemyCollection enemyCollection, CoreView coreView)
+    public Player(Hero hero, EnemyCollection enemyCollection, CoreView coreView, LoseView loseView)
     {
-        _playerLose = new PlayerLose(hero);
-        _core = new Core(coreView, enemyCollection);
+        PlayerLose = new PlayerLose(hero, loseView);
+        Core = new Core(coreView, enemyCollection);
     }
 }

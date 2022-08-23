@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-public class Hero : IUpdateble
+public class Hero : IUpdateble, IDisposable
 {
     private readonly HeroPrefab _heroPrefab;
     private readonly IHealth _heroHealth;
@@ -18,15 +17,15 @@ public class Hero : IUpdateble
 
     public event Action OnDead;
 
-    public Hero(HeroPrefab heroPrefab, IHealth health, PlayerInput playerInput)
+    public Hero(HeroPrefab heroPrefab, IHealth health, PlayerInput playerInput, HealthView healthView)
     {
         _heroPrefab = heroPrefab;
         _heroHealth = health;
 
-        Init(playerInput);
+        Init(playerInput, healthView);
     }
 
-    private void Init(PlayerInput playerInput)
+    private void Init(PlayerInput playerInput, IHealthView healthView)
     {
         _characterAnimator = new CharacterAnimator(_heroPrefab.Animator);
         
@@ -42,7 +41,7 @@ public class Hero : IUpdateble
             _heroStatesHandler.InputHandler, _heroPrefab.HeroLayer);
         _heroAttack.Init(distanceAttack: 3, damage: 1);
 
-        _heroHealthHandler = new HealthHandler(FindView(), _heroHealth, _heroPrefab, _heroStatesHandler.HeroStates);
+        _heroHealthHandler = new HealthHandler(healthView, _heroHealth, _heroPrefab, _heroStatesHandler.HeroStates);
         _heroHealthHandler.Init(initialHealth: 20);
         _heroHealthHandler.OnDie += Die;
     }
@@ -59,5 +58,19 @@ public class Hero : IUpdateble
         _heroMovement.UpdateState(dt);
     }
 
-    private IHealthView FindView() => Object.FindObjectOfType<HealthView>();
+    public void Activate()
+    {
+        _heroPrefab.gameObject.SetActive(true);
+        _heroStatesHandler.HeroStates.SetInitialState();
+    }
+
+    public void Deactivate()
+    {
+        _heroPrefab.gameObject.SetActive(false);
+    }
+
+    public void Dispose()
+    {
+        throw new NotImplementedException();
+    }
 }
