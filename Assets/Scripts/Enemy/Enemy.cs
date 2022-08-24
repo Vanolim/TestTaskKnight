@@ -3,72 +3,65 @@ using UnityEngine;
 
 public class Enemy : IUpdateble
 {
-    private readonly EnemyPrefab _enemyPrefab;
-    private readonly ISetDirection _setDirection;
     private readonly IHealth _enemyHealth;
-    private ICharacterStates _enemyStates;
-    private EnemyMovement _enemyMovement;
+    private readonly ICharacterStates _enemyStates;
+    private readonly EnemyMovement _enemyMovement;
+    private readonly CharacterAnimatorHandler _characterAnimatorHandler;
+    private readonly HealthHandler _healthHandler;
+    private readonly DetectorFinishAnimation _detectorFinishAnimation;
+    private readonly EnemyAttackDetector _enemyAttackDetector;
     private CharacterAnimator _enemyAnimator;
-    private CharacterAnimatorHandler _characterAnimatorHandler;
-    private CharacterAttack _enemyAttack;
-    private HealthHandler _healthHandler;
-    private DetectorFinishAnimation _detectorFinishAnimation;
-    private EnemyAttackDetector _enemyAttackDetector;
+    private EnemyDataPreset _enemyDataPreset;
 
-    private float _damage = 1f;
-    
+    public EnemyPrefab EnemyPrefab { get; }
+    public int Worth => _enemyDataPreset.Worth;
+    public CharacterAttack EnemyAttack { get; private set;}
     public bool IsActive { get; private set; }
 
     public event Action<Enemy> OnDie;
 
-    public Enemy(EnemyPrefab enemyPrefab, ICharacterStates enemyStates, ISetDirection setDirection, IHealth enemyHealth)
+    public Enemy(EnemyPrefab enemyPrefab, ICharacterStates enemyStates, ISetDirection setDirection, 
+        IHealth enemyHealth, EnemyDataPreset enemyDataPreset)
     {
-        _enemyPrefab = enemyPrefab;
+        EnemyPrefab = enemyPrefab;
         _enemyStates = enemyStates;
-        _setDirection = setDirection;
         _enemyHealth = enemyHealth;
-
-        Init(setDirection);
-    }
-
-    private void Init(ISetDirection setDirection)
-    {
-        _enemyStates.InitInitialState(States.Run);
+        _enemyDataPreset = enemyDataPreset;
         
-        _enemyMovement = new EnemyMovement(_enemyPrefab.transform, _enemyStates, _enemyPrefab.SpriteRenderer, setDirection);
-        _enemyMovement.Init(moveSpeed: 7);
-
-        _enemyAnimator = new CharacterAnimator(_enemyPrefab.Animator);
-        _characterAnimatorHandler = new CharacterAnimatorHandler(_enemyAnimator, _enemyStates);
-
-        _enemyAttackDetector = new EnemyAttackDetector(_enemyStates, setDirection);
-        _enemyAttack = new CharacterAttack(_enemyPrefab.CharacterEventAttackDetector, _enemyPrefab.Center, setDirection, _enemyPrefab.EnemyLayer);
-        _enemyAttack.Init(distanceAttack: 2f, damage: _damage);
-        _enemyAttackDetector.Init(distanceAttack: 2f);
-        
-        _healthHandler = new HealthHandler(_enemyPrefab.HealthView, _enemyHealth, _enemyPrefab, _enemyStates);
-        _healthHandler.Init(initialHealth: 1);
-        _healthHandler.OnDie += SetDieState;
-
+        _enemyMovement = new EnemyMovement(EnemyPrefab.transform, _enemyStates, EnemyPrefab.SpriteRenderer, setDirection);
+        _enemyAnimator = new CharacterAnimator(EnemyPrefab.Animator);
+        _characterAnimatorHandler = new CharacterAnimatorHandler(_enemyAnimator, _enemyStates, isUseRandomAttack: false);
+        _enemyAttackDetector = new EnemyAttackDetector(_enemyStates, setDirection, _enemyDataPreset.DistanceAttack);
+        EnemyAttack = new CharacterAttack(EnemyPrefab.CharacterEventAttackDetector, EnemyPrefab.Center, setDirection, EnemyPrefab.IgnoreLayer);
+        _healthHandler = new HealthHandler(EnemyPrefab.HealthView, _enemyHealth, EnemyPrefab, _enemyStates);
         _detectorFinishAnimation = new DetectorFinishAnimation(_enemyAnimator);
         StateResetter stateResetter = new StateResetter(_detectorFinishAnimation, _enemyStates);
+        
+        Init();
     }
 
-    public void UpgradeDamage()
+    private void Init()
     {
-        _enemyAttack.Init(distanceAttack: 2f, damage: _damage += 1f);
+        _enemyStates.InitInitialState(States.Run);
+        _enemyMovement.Init(moveSpeed: _enemyDataPreset.MoveSpeed);
+        EnemyAttack.Init(distanceAttack: _enemyDataPreset.DistanceAttack, damage: _enemyDataPreset.InitialDamage);
+        _healthHandler.Init(initialHealth: _enemyDataPreset.InitialHealth);
+        
+        _healthHandler.OnDie += SetDieState;
     }
 
     public void Activate()
     {
+        EnemyPrefab.ActivateCollider();
         Reset();
         IsActive = true;
-        _enemyPrefab.gameObject.SetActive(true);
+        EnemyPrefab.gameObject.SetActive(true);
         _enemyStates.Transit(States.Run);
     }
     
     private void SetDieState()
     {
+        EnemyPrefab.DeactivateCollider();
         _enemyStates.Transit(States.Die);
         _enemyStates.OnStateChanged += Die;
     }
@@ -92,17 +85,14 @@ public class Enemy : IUpdateble
     private void Reset()
     {
         _characterAnimatorHandler.Reset();
-        _healthHandler.Init(initialHealth: 1);
+        _healthHandler.Init(initialHealth: _enemyDataPreset.InitialHealth);
     }
 
     public void Deactivate()
     {
         IsActive = false;
-        _enemyPrefab.gameObject.SetActive(false);
+        EnemyPrefab.gameObject.SetActive(false);
     }
 
-    public void SetPosition(Vector2 enemySpawnerLeftSpawnPosition)
-    {
-        _enemyPrefab.transform.position = enemySpawnerLeftSpawnPosition;
-    }
+    public void SetPosition(Vector2 spawnPosition) => EnemyPrefab.transform.position = spawnPosition;
 }

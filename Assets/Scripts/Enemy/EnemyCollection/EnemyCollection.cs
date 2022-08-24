@@ -8,29 +8,29 @@ public class EnemyCollection : IUpdateble
     private readonly EnemySpawner _enemySpawner;
     private readonly EnemyPool _enemyPool;
     private readonly EnemiesDamageEnhancer _enemiesDamageEnhancer;
-    private int _countPoolEnemy = 2;
-
-    private int _spawnTime = 2;
+    private EnemyCollectionDataPreset _enemyCollectionDataPreset;
+    
     private bool _isWork;
     private float _count;
 
-    private readonly List<Enemy> _activeEnemies = new List<Enemy>();
+    private List<Enemy> _activeEnemies = new List<Enemy>();
 
-    public event Action OnEnemyKilled;
+    public event Action<Enemy> OnEnemyKilled;
 
-    public EnemyCollection(Transform hero, EnemySpawner enemySpawner)
+    public EnemyCollection(Transform hero, EnemySpawner enemySpawner, EnemyCollectionDataPreset enemyCollectionDataPreset)
     {
+        _enemyCollectionDataPreset = enemyCollectionDataPreset;
         _hero = hero;
         _enemyPool = new EnemyPool();
-        _enemiesDamageEnhancer = new EnemiesDamageEnhancer();
         _enemySpawner = enemySpawner;
+        InitCollection();
 
-        Init();
+        _enemiesDamageEnhancer = new EnemiesDamageEnhancer(_enemyPool.Enemies, _enemyCollectionDataPreset.EnemyUpgradeDataPreset);
     }
 
-    private void Init()
+    private void InitCollection()
     {
-        for (int i = 0; i < _countPoolEnemy; i++)
+        for (int i = 0; i < _enemyCollectionDataPreset.CountPollEnemy; i++)
         {
             EnemyPrefab newEnemy = _enemySpawner.Spawn();
             _enemyPool.AddEnemy(EnemyInit(newEnemy));
@@ -41,8 +41,9 @@ public class EnemyCollection : IUpdateble
 
     private Enemy EnemyInit(EnemyPrefab enemyPrefab)
     {
-        Enemy enemy = new Enemy(enemyPrefab, new EnemyStates(), new HeroPositionDetector(_hero, enemyPrefab.transform), new Health());
-        _enemiesDamageEnhancer.AddEnemy(enemy);
+        Enemy enemy = new Enemy(enemyPrefab, new EnemyStates(), 
+            new HeroPositionDetector(_hero, enemyPrefab.transform), new Health(), _enemyCollectionDataPreset.EnemyDataPreset);
+        
         enemy.Deactivate();
         enemy.OnDie += DeactivateActiveEnemy;
         return enemy;
@@ -53,32 +54,37 @@ public class EnemyCollection : IUpdateble
         if (_isWork)
         {
             _count += dt;
-            if (_count >= _spawnTime)
+            if (_count >= _enemyCollectionDataPreset.TimeSpawnNewEnemy)
             {
-                GetNewActiveEnemy();
-                _count = 0;
+                if(GetNewActiveEnemy())
+                    _count = 0;
             }
-        }
 
-        for (int i = 0; i < _activeEnemies.Count; i++)
-        {
-            _activeEnemies[i].UpdateState(dt);
+            for (int i = 0; i < _activeEnemies.Count; i++)
+            {
+                _activeEnemies[i].UpdateState(dt);
+            }
+
+            _enemiesDamageEnhancer.UpdateState(dt);
         }
     }
 
-    private void GetNewActiveEnemy()
+    private bool GetNewActiveEnemy()
     {
         if (_enemyPool.TryGetEnemy(out Enemy enemy))
         {
             enemy.SetPosition(_enemySpawner.GetSpawnPosition());
             enemy.Activate();
             _activeEnemies.Add(enemy);
+            return true;
         }
+
+        return false;
     }
 
     private void DeactivateActiveEnemy(Enemy enemy)
     {
-        OnEnemyKilled?.Invoke();
+        OnEnemyKilled?.Invoke(enemy);
         _activeEnemies.Remove(enemy);
         enemy.Deactivate();
     }
@@ -86,10 +92,12 @@ public class EnemyCollection : IUpdateble
     public void Deactivate()
     {
         _isWork = false;
-
-        foreach (var activeEnemy in _activeEnemies)
+        
+        for (int i = 0; i < _activeEnemies.Count; i++)
         {
-            activeEnemy.Deactivate();
+            _activeEnemies[i].Deactivate();
         }
+
+        _activeEnemies = new List<Enemy>();
     }
 }

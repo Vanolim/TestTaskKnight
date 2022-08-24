@@ -5,7 +5,6 @@ public class InputHandler : ISetDirection
 {
     private readonly ICharacterStates _heroStates;
     private readonly PlayerInput _playerInput;
-
     private Vector2 _direction;
 
     public Vector2 Direction => _direction;
@@ -35,23 +34,11 @@ public class InputHandler : ISetDirection
         _heroStates.Transit(States.Run);
     }
 
-    private void OnStopMove()
-    {
-        _heroStates.Transit(States.Idle);
-    }
+    private void OnStopMove() => _heroStates.Transit(States.Idle);
 
-    private void OnJump()
-    {
-        OnInputJump?.Invoke();
-    }
+    private void OnJump() => OnInputJump?.Invoke();
 
-    private void OnAttack()
-    {
-        _heroStates.Transit(States.Attack);
-    }
+    private void OnAttack() => _heroStates.Transit(States.Attack);
 
-    private void OnRoll()
-    {
-        _heroStates.Transit(States.Roll);
-    }
+    private void OnRoll() => _heroStates.Transit(States.Roll);
 }

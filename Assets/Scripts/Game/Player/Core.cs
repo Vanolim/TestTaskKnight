@@ -1,11 +1,11 @@
-﻿public class Core : IDisposable
+﻿using UnityEngine;
+
+public class Core : IDisposable
 {
     private readonly CoreView _coreView;
     private readonly EnemyCollection _enemyCollection;
-    private int _core = 0;
+    private int _core;
 
-    private const int CORE_FOR_KILLED_ENEMY = 1;
-    
     public Core(CoreView coreView, EnemyCollection enemyCollection)
     {
         _coreView = coreView;
@@ -17,9 +17,9 @@
 
     private void InitView() => _coreView.UpdateCore(_core);
 
-    private void AddCore()
+    private void AddCore(Enemy enemy)
     {
-        _core += CORE_FOR_KILLED_ENEMY;
+        _core += enemy.Worth;
         _coreView.UpdateCore(_core);
     }
 

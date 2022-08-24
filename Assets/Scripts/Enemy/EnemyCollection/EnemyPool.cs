@@ -5,6 +5,8 @@ public class EnemyPool
 {
     private readonly List<Enemy> _enemies = new List<Enemy>();
 
+    public IReadOnlyList<Enemy> Enemies => _enemies;
+
     public void AddEnemy(Enemy enemy) => _enemies.Add(enemy);
 
     public bool TryGetEnemy(out Enemy enemy)

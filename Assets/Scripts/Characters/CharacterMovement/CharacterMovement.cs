@@ -5,7 +5,6 @@ public abstract class CharacterMovement : IUpdateble
     private readonly Transform _character;
     private readonly SpriteRenderer _spriteRenderer;
     private readonly ISetDirection _setDirection;
-    private readonly ICharacterStates _characterStates;
 
     private float _moveSpeed;
     
@@ -17,14 +16,13 @@ public abstract class CharacterMovement : IUpdateble
         SpriteRenderer spriteRenderer, ISetDirection setDirection)
     {
         _character = character;
-        _characterStates = characterStates;
         _spriteRenderer = spriteRenderer;
         _setDirection = setDirection;
         
-        _characterStates.OnStateChanged += SetCurrentState;
+        characterStates.OnStateChanged += SetCurrentState;
     }
 
-    public void SetMoveSpeed(float value) => _moveSpeed = value;
+    protected void SetMoveSpeed(float value) => _moveSpeed = value;
 
     public abstract void UpdateState(float dt);
     

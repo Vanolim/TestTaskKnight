@@ -7,7 +7,7 @@ public class ResolutionCameraRenderer : MonoBehaviour
 
     private Camera _camera;
 
-    private void Start()
+    private void Awake()
     {
         _camera = Camera.main;
         Init();

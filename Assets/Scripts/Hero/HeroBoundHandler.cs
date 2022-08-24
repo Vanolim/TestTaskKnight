@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HeroBoundHandler : IUpdateble
+public class HeroBoundHandler : IUpdateble, IDisposable
 {
     private readonly InputHandler _inputHandler;
     private readonly ICharacterStates _heroStates;
@@ -23,12 +23,14 @@ public class HeroBoundHandler : IUpdateble
 
     private void TryJump()
     {
-        if (_heroRB.velocity == Vector2.zero && _heroStates.CurrentCharacterState is States.Idle or States.Run)
+        if (_heroRB.velocity == Vector2.zero && IsCurrentStateToTransitJump())
         {
             _heroStates.Transit(States.Jump);
             SetJump();
         }
     }
+
+    private bool IsCurrentStateToTransitJump() => _heroStates.CurrentCharacterState is States.Idle or States.Run;
 
     public void UpdateState(float dt)
     {
@@ -74,4 +76,5 @@ public class HeroBoundHandler : IUpdateble
 
     private bool IsFall() => _isFallSet == false && _heroRB.velocity.y < FALL_RATE;
     private bool IsFinishedFalling() => _isGroundSet == false && _isFallSet && _heroRB.velocity.y == 0;
+    public void Dispose() => _inputHandler.OnInputJump -= TryJump;
 }

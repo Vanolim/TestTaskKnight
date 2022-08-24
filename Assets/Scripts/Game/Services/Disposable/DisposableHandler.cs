@@ -5,15 +5,9 @@ public class DisposableHandler : IDisposableHandler
 {
     private readonly List<IDisposable> _disposables = new List<IDisposable>();
     
-    public void Register(IDisposable disposable)
-    {
-        _disposables.Add(disposable);
-    }
+    public void Register(IDisposable disposable) => _disposables.Add(disposable);
 
-    public void UnRegister(IDisposable disposable)
-    {
-        _disposables.Remove(disposable);
-    }
+    public void UnRegister(IDisposable disposable) => _disposables.Remove(disposable);
 
     public void AllUnRegister()
     {

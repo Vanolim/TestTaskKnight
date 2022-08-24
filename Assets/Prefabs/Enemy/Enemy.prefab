@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 3855731306191762398}
   - component: {fileID: 902677926197643205}
   - component: {fileID: 822980509578147910}
-  - component: {fileID: 1954120732603659048}
   - component: {fileID: 7989752820984210999}
   m_Layer: 7
   m_Name: Enemy
@@ -202,9 +201,12 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 8905240955106295147}
   _animator: {fileID: 3855731306191762398}
   _center: {fileID: 4768431204920814224}
-  _enemyLayer: 7
+  _ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 640
   _healthView: {fileID: 3602593368274629451}
   _characterEventAttackDetector: {fileID: 7989752820984210999}
+  _boxCollider2D: {fileID: 822980509578147910}
 --- !u!61 &822980509578147910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -231,27 +233,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5661206, y: 2.001162}
   m_EdgeRadius: 0
---- !u!50 &1954120732603659048
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2731127947861714689}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &7989752820984210999
 MonoBehaviour:
   m_ObjectHideFlags: 0

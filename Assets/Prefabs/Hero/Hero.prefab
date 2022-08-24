@@ -174,7 +174,9 @@ MonoBehaviour:
   _rb: {fileID: 1021974984825055657}
   _animator: {fileID: 1021974984825055663}
   _center: {fileID: 5978927465379536460}
-  _heroLayer: 3
+  _ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 520
   _characterEventAttackDetector: {fileID: 5607275109749012177}
 --- !u!114 &5607275109749012177
 MonoBehaviour:

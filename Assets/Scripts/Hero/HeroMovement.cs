@@ -16,10 +16,10 @@ public class HeroMovement : CharacterMovement
 
     public void Init(float moveSpeed, float bounceForce, float rollSpeed, float rollDistance)
     {
-        SetMoveSpeed(moveSpeed);
         _bounceForce = bounceForce;
         _rollSpeed = rollSpeed;
         _rollDistance = rollDistance;
+        SetMoveSpeed(moveSpeed);
     }
 
     public override void UpdateState(float dt)

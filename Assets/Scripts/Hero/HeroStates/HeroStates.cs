@@ -14,12 +14,12 @@
                 return true;
         }
 
-        if (CurrentCharacterState is States.Idle or States.Run or States.GetDamage)
+        if (CurrentCharacterState == States.Attack)
         {
-            return true;
+            if (transitCharacterState == States.GetDamage)
+                return true;
         }
-        
 
-        return false;
+        return CurrentCharacterState is States.Idle or States.Run or States.GetDamage or States.Roll;
     }
 }

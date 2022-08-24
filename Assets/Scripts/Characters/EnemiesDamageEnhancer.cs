@@ -1,25 +1,25 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemiesDamageEnhancer : IUpdateble
 {
-    private List<Enemy> _enemies = new List<Enemy>();
+    private readonly IReadOnlyList<Enemy> _enemies;
     private float _counter;
+    private EnemyUpgradeDataPreset _enemyUpgradeDataPreset;
 
-    private const float DAMAGE_UPGRADE_TIME = 10f;
-
-    public void AddEnemy(Enemy enemy)
+    public EnemiesDamageEnhancer(IReadOnlyList<Enemy> enemies, EnemyUpgradeDataPreset enemyUpgradeDataPreset)
     {
-        _enemies.Add(enemy);
+        _enemies = enemies;
+        _enemyUpgradeDataPreset = enemyUpgradeDataPreset;
     }
-    
+
     public void UpdateState(float dt)
     {
         _counter += dt;
 
-        if (_counter >= DAMAGE_UPGRADE_TIME)
+        if (_counter >= _enemyUpgradeDataPreset.DamageUpgradeTime)
         {
             UpgradeEnemies();
-
             _counter = 0;
         }
     }
@@ -28,7 +28,7 @@ public class EnemiesDamageEnhancer : IUpdateble
     {
         foreach (var enemy in _enemies)
         {
-            enemy.UpgradeDamage();
+            enemy.EnemyAttack.UpgradeDamage(_enemyUpgradeDataPreset.DamageUpgradeValue);
         }
     }
 }

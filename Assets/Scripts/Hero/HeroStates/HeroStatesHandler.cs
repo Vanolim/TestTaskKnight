@@ -26,5 +26,6 @@ public class HeroStatesHandler : IUpdateble, IDisposable
     public void Dispose()
     {
         _stateResetter.Dispose();
+        _heroBoundHandler.Dispose();
     }
 }

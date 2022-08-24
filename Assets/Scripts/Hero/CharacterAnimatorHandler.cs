@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class CharacterAnimatorHandler
+public class CharacterAnimatorHandler : IDisposable
 {
     private readonly CharacterAnimator _characterAnimator;
-    private ICharacterStates _characterStates;
+    private readonly ICharacterStates _characterStates;
 
-    public CharacterAnimatorHandler(CharacterAnimator characterAnimator, ICharacterStates characterStates)
+    private readonly bool _isUseRandomAttack;
+
+    public CharacterAnimatorHandler(CharacterAnimator characterAnimator, ICharacterStates characterStates, bool isUseRandomAttack)
     {
         _characterAnimator = characterAnimator;
         _characterStates = characterStates;
+        _isUseRandomAttack = isUseRandomAttack;
 
         _characterStates.OnStateChanged += SetAnimation;
     }
@@ -35,8 +38,7 @@ public class CharacterAnimatorHandler
                 _characterAnimator.SetRoll();
                 break;
             case States.Attack:
-                //SetRandomAnimationAttack();
-                _characterAnimator.SetAttack1();
+                SetAttack();
                 break;
             case States.GetDamage:
                 _characterAnimator.SetGetDamage();
@@ -45,6 +47,14 @@ public class CharacterAnimatorHandler
                 _characterAnimator.SetDie(true);
                 break;
         }
+    }
+
+    private void SetAttack()
+    {
+        if (_isUseRandomAttack)
+            SetRandomAnimationAttack();
+        else
+            _characterAnimator.SetAttack1();
     }
 
     private void SetRandomAnimationAttack()
@@ -64,4 +74,6 @@ public class CharacterAnimatorHandler
                 break;
         }
     }
+
+    public void Dispose() => _characterStates.OnStateChanged += SetAnimation;
 }
